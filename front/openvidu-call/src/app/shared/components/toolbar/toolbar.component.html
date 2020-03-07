@@ -34,5 +34,9 @@
     <button mat-icon-button id="navChatButton" (click)="toggleChat()" *ngIf="!this.ovSettings || (this.ovSettings && this.ovSettings.chat)">
         <mat-icon matBadge="{{newMessagesNum}}" [matBadgeHidden]="newMessagesNum === 0"  matBadgePosition="above before" matTooltip="Chat" matBadgeColor="accent">chat</mat-icon>
     </button>
+    <button  id="recButton" (click)="initiateRecording()" *ngIf="!this.ovSettings || (this.ovSettings && this.ovSettings.chat)">Rec
+    </button>
+    <button  id="stopRecButton" (click)="stopRecording()" *ngIf="!this.ovSettings || (this.ovSettings && this.ovSettings.chat)">Stp
+    </button>
   </div>
 </mat-toolbar>
