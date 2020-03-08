@@ -18,12 +18,12 @@ export class ToolbarComponent implements OnInit {
 
   private record;
     //Will use this flag for detect recording
-    private recording = false;
     //Url of Blob
     private url;
     private error;
   fullscreenIcon = 'fullscreen';
 
+  @Input() recording: boolean;
   @Input() lightTheme: boolean;
   @Input() mySessionId: boolean;
   @Input() localUser: UserModel;
@@ -127,7 +127,7 @@ export class ToolbarComponent implements OnInit {
      */
     processRecording(blob) {
         this.url = URL.createObjectURL(blob);
-        FileSaver.saveAs(this.url)
+        FileSaver.saveAs(this.url, 'recording.wav')
     }
     /**
      * Process Error.
